@@ -1,3 +1,7 @@
 .create-account {
     box-shadow: 6px 6px 15px rgb(233, 229, 229), -6px -6px 15px rgb(233, 229, 229);
 }
+
+input[type="date"]:invalid span::after {
+    content: ' new_releases';
+}

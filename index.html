@@ -16,39 +16,45 @@
     <div class="container">
         <div class="create-account border-0 my-5">
             <h1 class="bg-primary text-light text-capitalize text-center">creat account</h1>
+            <form action="login.html" method="post">
+                <div class="row p-3 align-items-center">
+                    <div class="col-6">
 
-            <div class="row p-3">
-                <div class="col-6">
 
-                    <label id="lb-fname" for="" class="text-primary text-capitalize w-100">first name:</label><br>
-                    <input id="fname" type="text" class="w-100" name="firstName"><br><br>
-                    <label id="lb-mail" for="" class="text-primary text-capitalize">email :</label><br>
-                    <input id="mail" type="text" class="w-100" name="email"><br><br>
-                    <label id="lb-pass" for="" class="text-primary text-capitalize">password:</label><br>
-                    <input id="pass" type="password" class="w-100" name="password"><br><br>
-                    <label id="lb-gender" for="" class="text-primary text-capitalize">gender:</label><br>
-                    <input id="male" type="radio" name="rd" value="male"><label for="" class="mb-2">Male</label><br>
-                    <input id="fem" type="radio" name="rd" value="female"><label for="">Female</label><br>
+                        <label id="lb-fname" for="" class="text-primary text-capitalize ">first name:</label><br>
+                        <input id="fname" type="text" class=" w-100" name="firstName"><br><br>
 
+
+                        <label id="lb-mail" for="" class="text-primary text-capitalize ">email :</label><br>
+                        <input id="mail" type="text" class=" w-100" name="email"><br><br>
+
+
+                        <label id="lb-pass" for="" class="text-primary text-capitalize ">password:</label><br>
+                        <input id="pass" type="password" class="w-100" name="password"><br><br>
+
+                        <label id="lb-gender" for="" class="text-primary text-capitalize">gender:</label><br>
+                        <input id="male" type="radio" name="rd" value="male"><label for="" class="mb-2">Male</label><br>
+                        <input id="fem" type="radio" name="rd" value="female"><label for="">Female</label><br>
+
+                    </div>
+
+                    <div class="col-6 ">
+
+                        <label id="lb-lname" for="" class="text-primary text-capitalize w-100">last name:</label><br>
+                        <input id="lname" type="text" class="w-100" name="lastName"><br><br>
+                        <label id="lb-phone" for="" class="text-primary text-capitalize w-100">phone number</label><br>
+                        <input id="phone" type="text" class="w-100" name="phoneNumber"><br><br>
+                        <label id="lb-conf-pass" for="" class="text-primary text-capitalize w-100">confirm password:</label><br>
+                        <input id="conf-pass" type="password" class="w-100" name="confirmPassword"><br><br>
+                        <label id="lb-date" for="" class="text-primary text-capitalize w-100">birthdate:</label><br>
+                        <input id="date" type="date" class="w-75" name="birthDate"><span id="sign" class="material-symbols-outlined text-success"></span><br><br>
+                    </div>
                 </div>
-
-                <div class="col-6 ">
-
-                    <label id="lb-lname" for="" class="text-primary text-capitalize w-100">last name:</label><br>
-                    <input id="lname" type="text" class="w-100" name="lastName"><br><br>
-                    <label id="lb-phone" for="" class="text-primary text-capitalize w-100">phone number</label><br>
-                    <input id="phone" type="text" class="w-100" name="phoneNumber"><br><br>
-                    <label id="lb-conf-pass" for="" class="text-primary text-capitalize w-100">confirm password:</label><br>
-                    <input id="conf-pass" type="password" class="w-100" name="confirmPassword"><br><br>
-                    <label id="lb-date" for="" class="text-primary text-capitalize w-100">birthdate:</label><br>
-                    <input id="date" type="date" class="w-100" name="birthDate"><br><br>
+                <div class="send p-3">
+                    <button id="reset" type="button" class="btn btn-primary text-capitalize ">reset</button>
+                    <button id="regist" type="button" class="btn btn-primary text-capitalize">register</button>
                 </div>
-            </div>
-            <div class="send p-3">
-                <button id="reset" type="button" class="btn btn-primary text-capitalize ">reset</button>
-                <button id="regist" type="button" class="btn btn-primary text-capitalize">register</button>
-            </div>
-
+            </form>
         </div>
     </div>
 

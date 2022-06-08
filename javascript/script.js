@@ -12,9 +12,9 @@ let pass = document.getElementById("pass")
 let lbPass = document.getElementById("lb-pass")
 let lbConfPass = document.getElementById("lb-conf-pass")
 let confPass = document.getElementById("conf-pass")
-    // let male = document.getElementById("male");
-    // let female = document.getElementById("female");
+
 let radiobtn = document.querySelectorAll("input[type='radio']")
+
 let btn = document.querySelectorAll("button")
 
 let fnameValide = false;
@@ -49,13 +49,13 @@ fname.onblur = () => {
 
     if (name.indexOf(" ") == -1 && name != "" && isNaN(name)) {
 
-        lbFname.innerHTML = `<p class="text-success"><span class="material-symbols-outlined text-success">
+        lbFname.innerHTML = `<p class="text-success m-0"><span class="material-symbols-outlined text-success">
         new_releases </span>  valide username</p>`
         fnameValide = true;
         handleDisabled(lname)
         lname.focus();
     } else {
-        lbFname.innerHTML = `<p class='text-danger '>please enter valide username <span class='material-symbols-outlined text-danger'>error</span></p>`
+        lbFname.innerHTML = `<p class='text-danger m-0'>please enter valide username <span class='material-symbols-outlined text-danger'>error</span></p>`
 
 
 
@@ -67,13 +67,13 @@ lname.onblur = () => {
 
     if (namelast.indexOf(" ") == -1 && namelast != "" && isNaN(namelast)) {
 
-        lbLname.innerHTML = `<p class="text-success"><span class="material-symbols-outlined text-success">
+        lbLname.innerHTML = `<p class="text-success m-0"><span class="material-symbols-outlined text-success">
         new_releases </span>  valide lastname</p>`;
         lnameValide = true;
         handleDisabled(mail)
         mail.focus();
     } else {
-        lbLname.innerHTML = `<p class='text-danger '>please enter valide lastname <span class='material-symbols-outlined text-danger'>error</span></p>`
+        lbLname.innerHTML = `<p class='text-danger m-0'>please enter valide lastname <span class='material-symbols-outlined text-danger'>error</span></p>`
 
 
     }
@@ -83,13 +83,13 @@ mail.onblur = () => {
     var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (userMail.match(mailformat)) {
 
-        lbMail.innerHTML = `<p class="text-success"><span class="material-symbols-outlined text-success">
+        lbMail.innerHTML = `<p class="text-success m-0"><span class="material-symbols-outlined text-success">
         new_releases </span>  valide mail</p>`;
         mailValide = true
         handleDisabled(phone)
         phone.focus();
     } else {
-        lbMail.innerHTML = `<p class='text-danger '>please enter valide mail <span class='material-symbols-outlined text-danger'>error</span></p>`
+        lbMail.innerHTML = `<p class='text-danger m-0'>please enter valide mail <span class='material-symbols-outlined text-danger'>error</span></p>`
 
         phone.disabled = true
 
@@ -99,13 +99,13 @@ mail.onblur = () => {
 phone.onblur = () => {
     var phoneno = /^\d{10}$/;
     if ((phone.value.match(phoneno))) {
-        lbPhone.innerHTML = `<p class="text-success"><span class="material-symbols-outlined text-success">
+        lbPhone.innerHTML = `<p class="text-success m-0"><span class="material-symbols-outlined text-success">
         new_releases </span>  valide phone number</p>`;
         phoneValide = true;
         handleDisabled(pass);
         pass.focus();
     } else {
-        lbPhone.innerHTML = `<p class='text-danger '>please enter valide phone number <span class='material-symbols-outlined text-danger'>error</span></p>`
+        lbPhone.innerHTML = `<p class='text-danger m-0'>please enter valide phone number <span class='material-symbols-outlined text-danger'>error</span></p>`
 
 
     }
@@ -113,40 +113,60 @@ phone.onblur = () => {
 pass.onblur = () => {
     if (pass.value.length >= 4 && pass.value.includes(" ") != true && pass.value != "") {
 
-        lbPass.innerHTML = `<p class="text-success"><span class="material-symbols-outlined text-success">
+        lbPass.innerHTML = `<p class="text-success m-0"><span class="material-symbols-outlined text-success">
         new_releases </span>  valide password</p>`;
         passValide = true;
         handleDisabled(confPass);
         confPass.focus();
     } else {
-        lbPass.innerHTML = `<p class='text-danger '>please enter valide password <span class='material-symbols-outlined text-danger'>error</span></p>`
+        lbPass.innerHTML = `<p class='text-danger m-0'>please enter valide password <span class='material-symbols-outlined text-danger'>error</span></p>`
 
 
     }
 }
 confPass.onblur = () => {
-        if (confPass.value.length >= 4 && confPass.value.includes(" ") != true && confPass.value != "" && confPass.value === pass.value) {
+    if (confPass.value.length >= 4 && confPass.value.includes(" ") != true && confPass.value != "" && confPass.value === pass.value) {
 
-            lbConfPass.innerHTML = `<p class="text-success"><span class="material-symbols-outlined text-success">
+        lbConfPass.innerHTML = `<p class="text-success m-0"><span class="material-symbols-outlined text-success">
         new_releases </span>  valide password</p>`;
-            confPassValide = true;
-
-            radiobtn[0].checked = true
-            radioValide = true;
-            handleDisabled(inpt[inpt.length - 1]);
+        confPassValide = true;
 
 
-        } else {
-            lbConfPass.innerHTML = `<p class='text-danger '>please enter valide password <span class='material-symbols-outlined text-danger'>error</span></p>`
 
 
-        }
+        handleDisabled(inpt[inpt.length - 1]);
+
+
+    } else {
+        lbConfPass.innerHTML = `<p class='text-danger m-0'>please enter valide password <span class='material-symbols-outlined text-danger'>error</span></p>`
+
+
     }
-    (inpt[inpt.length - 1]).onchange = () => {
-        dateValide = true
-    }
+}
+let genderVal = "";
 
-btn[0].addEventListener("click", () => { window.location.reload() })
+
+for (let i = 0; i < 2; i++) {
+    radiobtn[i].onchange = () => {
+        genderVal = radiobtn[i].value;
+        console.log(genderVal);
+
+    }
+}
+
+
+radioValide = true;
+
+
+
+(inpt[inpt.length - 1]).onchange = () => {
+
+    let dateValue = inpt[inpt.length - 1].value
+    console.log(dateValue)
+    dateValide = true
+}
+
+btn[0].addEventListener("click", () => { window.location.reload() });
 btn[1].addEventListener("click", () => {
     if (fnameValide == true && lnameValide == true && mailValide == true && passValide == true && confPassValide == true && radioValide == true && dateValide == true) {
         window.location.href = 'login.html'
