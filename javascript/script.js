@@ -23,6 +23,8 @@ let mailValide = false;
 let phoneValide = false;
 let passValide = false;
 let confPassValide = false;
+let radioValide = false
+let dateValide = false
 
 
 
@@ -123,20 +125,30 @@ pass.onblur = () => {
     }
 }
 confPass.onblur = () => {
-    if (confPass.value.length >= 4 && confPass.value.includes(" ") != true && confPass.value != "" && confPass.value === pass.value) {
+        if (confPass.value.length >= 4 && confPass.value.includes(" ") != true && confPass.value != "" && confPass.value === pass.value) {
 
-        lbConfPass.innerHTML = `<p class="text-success"><span class="material-symbols-outlined text-success">
+            lbConfPass.innerHTML = `<p class="text-success"><span class="material-symbols-outlined text-success">
         new_releases </span>  valide password</p>`;
-        confPassValide = true;
+            confPassValide = true;
 
-        radiobtn[0].checked = true
-
-        handleDisabled(inpt[inpt.length - 1]);
-
-
-    } else {
-        lbConfPass.innerHTML = `<p class='text-danger '>please enter valide password <span class='material-symbols-outlined text-danger'>error</span></p>`
+            radiobtn[0].checked = true
+            radioValide = true;
+            handleDisabled(inpt[inpt.length - 1]);
 
 
+        } else {
+            lbConfPass.innerHTML = `<p class='text-danger '>please enter valide password <span class='material-symbols-outlined text-danger'>error</span></p>`
+
+
+        }
     }
-}
+    (inpt[inpt.length - 1]).onchange = () => {
+        dateValide = true
+    }
+
+btn[0].addEventListener("click", () => { window.location.reload() })
+btn[1].addEventListener("click", () => {
+    if (fnameValide == true && lnameValide == true && mailValide == true && passValide == true && confPassValide == true && radioValide == true && dateValide == true) {
+        window.location.href = 'login.html'
+    }
+})
