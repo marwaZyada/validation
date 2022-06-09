@@ -26,8 +26,8 @@ let mailValide = false;
 let phoneValide = false;
 let passValide = false;
 let confPassValide = false;
-let radioValide = false
-let dateValide = false
+let radioValide = false;
+let dateValide = false;
 
 
 
@@ -147,11 +147,6 @@ confPass.onblur = () => {
         confPassValide = true;
 
 
-
-
-        lbGender.style.color = "yellow"
-
-
     } else {
         lbConfPass.innerHTML = `<p class='text-danger m-0'>please enter valide password <span class='material-symbols-outlined text-danger'>error</span></p>`
 
@@ -186,9 +181,6 @@ if (radioValide == false) {
 
 
 
-
-
-
 (inpt[inpt.length - 1]).onchange = () => {
 
     let dateValue = inpt[inpt.length - 1].value
@@ -198,15 +190,15 @@ if (radioValide == false) {
     dateValide = true
     btn[1].focus();
 }
-if (dateValide == false) {
-    lbGender.innerHTML = `<p class='text-danger m-0'>date must be selected <span class='material-symbols-outlined text-danger'>error</span></p>`
 
-}
+
+
+
 
 btn[0].addEventListener("click", () => { window.location.reload() });
 btn[1].addEventListener("click", () => {
 
     if (fnameValide == true && lnameValide == true && mailValide == true && passValide == true && confPassValide == true && radioValide == true && dateValide == true) {
-        window.location.href = "login.html"
+        window.location.href = "index.html"
     }
 })
