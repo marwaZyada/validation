@@ -14,6 +14,9 @@ let lbConfPass = document.getElementById("lb-conf-pass")
 let confPass = document.getElementById("conf-pass")
 
 let radiobtn = document.querySelectorAll("input[type='radio']")
+console.log(radiobtn)
+let lbGender = document.getElementById("lb-gender")
+let lbDate = document.getElementById("lb-date")
 
 let btn = document.querySelectorAll("button")
 
@@ -43,6 +46,7 @@ window.onload = () => {
 }
 
 
+
 fname.onblur = () => {
     let name = fname.value.trim();
 
@@ -51,16 +55,27 @@ fname.onblur = () => {
 
         lbFname.innerHTML = `<p class="text-success m-0"><span class="material-symbols-outlined text-success">
         new_releases </span>  valide username</p>`
+
+
         fnameValide = true;
         handleDisabled(lname)
         lname.focus();
     } else {
         lbFname.innerHTML = `<p class='text-danger m-0'>please enter valide username <span class='material-symbols-outlined text-danger'>error</span></p>`
 
-
+        fname.style.backgroundColor = "green";
 
     }
 }
+
+
+
+
+
+
+
+
+
 lname.onblur = () => {
     let namelast = lname.value.trim();
 
@@ -134,7 +149,7 @@ confPass.onblur = () => {
 
 
 
-        handleDisabled(inpt[inpt.length - 1]);
+        lbGender.style.color = "yellow"
 
 
     } else {
@@ -148,14 +163,29 @@ let genderVal = "";
 
 for (let i = 0; i < 2; i++) {
     radiobtn[i].onchange = () => {
-        genderVal = radiobtn[i].value;
-        console.log(genderVal);
+
+        lbGender.innerHTML = `<p class='text-success m-0'><span class='material-symbols-outlined text-success'> new_releases</span> gender  selected </p>`
+
+        radioValide = true;
+        // handleDisabled(inpt[inpt.length - 1]);
+
+        (inpt[inpt.length - 1]).focus();
+        handleDisabled(inpt[inpt.length - 1]);
 
     }
 }
+if (radioValide == false) {
+    lbGender.innerHTML = `<p class='text-danger m-0'>gender must be selected <span class='material-symbols-outlined text-danger'>error</span></p>`
+
+}
 
 
-radioValide = true;
+
+
+
+
+
+
 
 
 
@@ -163,12 +193,20 @@ radioValide = true;
 
     let dateValue = inpt[inpt.length - 1].value
     console.log(dateValue)
+    lbDate.innerHTML = `<p class='text-success m-0'><span class='material-symbols-outlined text-success'> new_releases</span> date  selected </p>`
+
     dateValide = true
+    btn[1].focus();
+}
+if (dateValide == false) {
+    lbGender.innerHTML = `<p class='text-danger m-0'>date must be selected <span class='material-symbols-outlined text-danger'>error</span></p>`
+
 }
 
 btn[0].addEventListener("click", () => { window.location.reload() });
 btn[1].addEventListener("click", () => {
+
     if (fnameValide == true && lnameValide == true && mailValide == true && passValide == true && confPassValide == true && radioValide == true && dateValide == true) {
-        window.location.href = 'login.html'
+        window.location.href = "login.html"
     }
 })
